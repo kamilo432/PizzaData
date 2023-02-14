@@ -2,13 +2,13 @@
 @model PizzaData.Pages.Pizzas.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pizza";
 }
 
-<h1>Index</h1>
+<h1>Pizza</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Pizza</a>
 </p>
 <table class="table">
     <thead>
@@ -22,6 +22,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Pizza[0].WaterAmount)
             </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].Hydration)
+            </th>
+
+
             <th>
                 @Html.DisplayNameFor(model => model.Pizza[0].YeastAmount)
             </th>
@@ -51,6 +57,10 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WaterAmount) g
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Hydration) %
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.YeastAmount) g
