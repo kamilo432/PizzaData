@@ -1,0 +1,70 @@
+﻿@page
+@model PizzaData.Pages.Pizzas.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pizza</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Pizza.Id" />
+            <div class="form-group">
+                <label asp-for="Pizza.FlourName" class="control-label"></label>
+                <input asp-for="Pizza.FlourName" class="form-control" />
+                <span asp-validation-for="Pizza.FlourName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.FlourAmount" class="control-label"></label>
+                <input asp-for="Pizza.FlourAmount" class="form-control" />
+                <span asp-validation-for="Pizza.FlourAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.WaterAmount" class="control-label"></label>
+                <input asp-for="Pizza.WaterAmount" class="form-control" />
+                <span asp-validation-for="Pizza.WaterAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.YeastAmount" class="control-label"></label>
+                <input asp-for="Pizza.YeastAmount" class="form-control" />
+                <span asp-validation-for="Pizza.YeastAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.OliveOilAmount" class="control-label"></label>
+                <input asp-for="Pizza.OliveOilAmount" class="form-control" />
+                <span asp-validation-for="Pizza.OliveOilAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.SaltAmount" class="control-label"></label>
+                <input asp-for="Pizza.SaltAmount" class="form-control" />
+                <span asp-validation-for="Pizza.SaltAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.AmbientFermentationTime" class="control-label"></label>
+                <input asp-for="Pizza.AmbientFermentationTime" class="form-control" />
+                <span asp-validation-for="Pizza.AmbientFermentationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pizza.FridgeFermentationTime" class="control-label"></label>
+                <input asp-for="Pizza.FridgeFermentationTime" class="form-control" />
+                <span asp-validation-for="Pizza.FridgeFermentationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

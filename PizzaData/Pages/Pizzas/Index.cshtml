@@ -1,0 +1,78 @@
+﻿@page
+@model PizzaData.Pages.Pizzas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].FlourName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].FlourAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].WaterAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].YeastAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].OliveOilAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].SaltAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].AmbientFermentationTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza[0].FridgeFermentationTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Pizza) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlourName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlourAmount) g
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WaterAmount) g
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YeastAmount) g
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OliveOilAmount) g
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaltAmount) g
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmbientFermentationTime) h
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FridgeFermentationTime) h
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
