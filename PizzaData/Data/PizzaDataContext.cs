@@ -15,5 +15,7 @@ namespace PizzaData.Data
         }
 
         public DbSet<PizzaData.Models.Pizza> Pizza { get; set; } = default!;
+
+        public DbSet<PizzaData.Models.Flour> Flours { get; set; } = default!;
     }
 }

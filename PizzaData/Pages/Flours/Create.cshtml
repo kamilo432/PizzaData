@@ -1,0 +1,59 @@
+﻿@page
+@model PizzaData.Pages.Flours.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Flours</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Flours.FlourName" class="control-label"></label>
+                <input asp-for="Flours.FlourName" class="form-control" />
+                <span asp-validation-for="Flours.FlourName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flours.FlourType" class="control-label"></label>
+                <input asp-for="Flours.FlourType" class="form-control" />
+                <span asp-validation-for="Flours.FlourType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flours.Protein" class="control-label"></label>
+                <input asp-for="Flours.Protein" class="form-control" />
+                <span asp-validation-for="Flours.Protein" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flours.Strength" class="control-label"></label>
+                <input asp-for="Flours.Strength" class="form-control" />
+                <span asp-validation-for="Flours.Strength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flours.Elasticity" class="control-label"></label>
+                <input asp-for="Flours.Elasticity" class="form-control" />
+                <span asp-validation-for="Flours.Elasticity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flours.FlourDescription" class="control-label"></label>
+                <input asp-for="Flours.FlourDescription" class="form-control" />
+                <span asp-validation-for="Flours.FlourDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

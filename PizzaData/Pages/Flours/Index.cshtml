@@ -1,0 +1,66 @@
+﻿@page
+@model PizzaData.Pages.Flours.IndexModel
+
+@{
+    ViewData["Title"] = "Flours";
+}
+
+<h1>Flours</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flours[0].FlourName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flours[0].FlourType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flours[0].Protein)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flours[0].Strength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flours[0].Elasticity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flours[0].FlourDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Flours) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlourName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlourType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Protein)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Strength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elasticity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlourDescription)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
