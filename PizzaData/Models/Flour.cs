@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzaData.Models
 {
     public class Flour
     {
         public int Id { get; set; }
-
 
         [Required]
         [DisplayName("Flour name")]
