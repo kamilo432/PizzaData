@@ -19,13 +19,17 @@ namespace PizzaData.Pages.Pizzas
             _context = context;
         }
 
+        [BindProperty]
+        public Pizza Pizza { get; set; } = default!;
+
+
         public IActionResult OnGet()
         {
+            ViewData["Flours"] = _context.Flours.ToList();
             return Page();
         }
 
-        [BindProperty]
-        public Pizza Pizza { get; set; } = default!;
+
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD

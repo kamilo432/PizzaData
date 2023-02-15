@@ -11,10 +11,16 @@ namespace PizzaData.Models
         [Required]
         [DisplayName("Flour name")]
         public string? FlourName { get; set; }
+
+        [DisplayName("Flour type")]
         public string ? FlourType { get; set; }
+
         public decimal? Protein { get; set; }
+
         public string? Strength { get; set; }
         public string? Elasticity { get; set; }
+
+        [DisplayName("Flour description")]
         public string? FlourDescription { get; set;}
     }
 }

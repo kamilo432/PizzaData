@@ -1,11 +1,17 @@
-﻿using System.ComponentModel;
+﻿using PizzaData.Pages.Flours;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using PizzaData.Models;
 
 namespace PizzaData.Models
 {
     public class Pizza
     {
         public int Id { get; set; }
+
+        public List<Flour>? Flours { get; set; }
 
 
         [Required]
@@ -48,7 +54,7 @@ namespace PizzaData.Models
         [DisplayFormat(DataFormatString = "{0:N0}")]
         public decimal AmbientFermentationTime { get; set; }
 
-        [DisplayName("Ambient fermentation time")]
+        [DisplayName("Fridge fermentation time")]
         [DisplayFormat(DataFormatString = "{0:N0}")]
         public decimal FridgeFermentationTime { get; set; }
     }
