@@ -46,3 +46,16 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+
+.italian-flag {
+    background-image: url("https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+}
+
+
+
+

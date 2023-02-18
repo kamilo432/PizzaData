@@ -8,13 +8,13 @@
 <h1>Pizza</h1>
 
 <p>
-    <a asp-page="Create">Create New Pizza</a>
+    <a asp-page="Create" class="btn btn-primary">Create New Pizza</a>
 </p>
-<table class="table">
+<table class="table table-striped-columns">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Pizza[0].Name)
+                @Html.DisplayNameFor(model => model.Pizza[0].FlourName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Pizza[0].FlourAmount)
@@ -48,9 +48,9 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Pizza) {
-        <tr>
+        <tr >
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.FlourName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FlourAmount) g
@@ -78,9 +78,9 @@
                 @Html.DisplayFor(modelItem => item.FridgeFermentationTime) h
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }

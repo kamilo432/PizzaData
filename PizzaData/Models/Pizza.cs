@@ -16,7 +16,7 @@ namespace PizzaData.Models
 
         [Required]
         [DisplayName("Flour name")]
-        public string? Name { get; set; }
+        public string? FlourName { get; set; }
 
         [DisplayName("Flour amount")]
         [DisplayFormat(DataFormatString = "{0:N0}")]

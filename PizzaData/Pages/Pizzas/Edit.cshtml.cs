@@ -36,6 +36,7 @@ namespace PizzaData.Pages.Pizzas
                 return NotFound();
             }
             Pizza = pizza;
+            ViewData["Flours"] = _context.Flours.ToList();
             return Page();
         }
 

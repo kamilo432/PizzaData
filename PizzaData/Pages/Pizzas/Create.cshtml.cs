@@ -22,15 +22,11 @@ namespace PizzaData.Pages.Pizzas
         [BindProperty]
         public Pizza Pizza { get; set; } = default!;
 
-
         public IActionResult OnGet()
         {
             ViewData["Flours"] = _context.Flours.ToList();
             return Page();
         }
-
-
-        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
