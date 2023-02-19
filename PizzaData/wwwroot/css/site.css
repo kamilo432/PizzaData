@@ -22,17 +22,6 @@ body {
 }
 
 
-.cards {
-    display: flex;
-    justify-content: center;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-
-.card {
-    margin: 10px;
-}
-
 
 
 

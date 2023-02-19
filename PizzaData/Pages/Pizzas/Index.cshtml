@@ -4,13 +4,20 @@
 @{
     ViewData["Title"] = "Pizza";
 }
+<style>
+  
+
+
+</style>
+
+
 
 <h1>Pizza</h1>
 
 <p>
     <a asp-page="Create" class="btn btn-primary">Create New Pizza</a>
 </p>
-<table class="table table-striped-columns">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -26,8 +33,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Pizza[0].Hydration)
             </th>
-
-
             <th>
                 @Html.DisplayNameFor(model => model.Pizza[0].YeastAmount)
             </th>
@@ -58,7 +63,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WaterAmount) g
             </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.Hydration) %
             </td>
@@ -77,10 +81,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FridgeFermentationTime) h
             </td>
-            <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
-                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            <td width="255">
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning" style=" display: inline; margin-right:5px">Edit</a> 
+                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-info" style="display: inline; margin-right:5px">Details</a> 
+                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger" style="display: inline; margin-right:5px">Delete</a>
             </td>
         </tr>
 }

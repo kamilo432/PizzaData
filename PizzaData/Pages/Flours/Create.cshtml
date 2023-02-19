@@ -43,16 +43,16 @@
                 <input asp-for="Flours.FlourDescription" class="form-control" />
                 <span asp-validation-for="Flours.FlourDescription" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="padding-right:5px; padding-top:5px">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
