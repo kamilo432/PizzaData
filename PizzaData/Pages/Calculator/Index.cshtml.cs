@@ -49,10 +49,7 @@ namespace PizzaData.Pages.Calculator
 
         public IActionResult OnPostCalculateDough()
         {
-            //ModelState.Clear();
-            //ModelState.SetModelValue("Calculator.NumberOfPizzas", new ValueProviderResult("10", CultureInfo.InvariantCulture));
-
-            var flour = (Calculator.BallWeight * 0.599m) * Calculator.NumberOfPizzas;
+            var flour = (Calculator.BallWeight * 0.599m) * Calculator.NumberOfBalls;
             var water = (flour * Calculator.Hydration) / 100;
             var salt = flour / 32.6m;
             var yeast = flour / 611.37m;

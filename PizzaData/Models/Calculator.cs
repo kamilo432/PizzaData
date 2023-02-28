@@ -10,8 +10,7 @@ namespace PizzaData.Models
         public decimal BallWeight { get; set; }
         public decimal Hydration { get; set; }
         [DisplayName("Number of balls")]
-        public decimal NumberOfPizzas { get; set; }
-        //zmienic numberofpizazs na balll
+        public decimal NumberOfBalls { get; set; }
 
     }
 }
