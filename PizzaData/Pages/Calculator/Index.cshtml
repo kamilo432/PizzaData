@@ -1,7 +1,50 @@
 ﻿@page
 @model PizzaData.Pages.Calculator.IndexModel
+
 @{
     ViewData["Title"] = "Calculator";
-
 }
+<style>
+
+</style>
+
 <h1>Calculator</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Calculator.BallWeight" class="control-label"></label> (g)
+                <input asp-for="Calculator.BallWeight" class="form-control" />
+                <span asp-validation-for="Calculator.BallWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calculator.Hydration" class="control-label"></label> (%)
+                <input asp-for="Calculator.Hydration" class="form-control" />
+                <span asp-validation-for="Calculator.Hydration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calculator.NumberOfPizzas" class="control-label"></label>
+                <input asp-for="Calculator.NumberOfPizzas" class="form-control" id="numberOfPizzas" />
+                <span asp-validation-for="Calculator.NumberOfPizzas" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="padding-right:5px; padding-top:5px">
+                <button type="submit" class="btn btn-primary" asp-page-handler="CalculateDough">Calculate dough</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            @Html.Raw(ViewData["cardHtml"])
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
